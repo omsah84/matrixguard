@@ -13,25 +13,38 @@ function Ajay() {
     };
 
     return (
+
+
+        <>
+    
+        
+        
+
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '100vh',
-            backgroundColor: '#f9f9f9', // Bright background
-            color: '#333', // Dark text color for better contrast
+            justifyContent: 'center',  // Centering vertically
+            alignItems: 'center',      // Centering horizontally
+            minHeight: '100vh',         // Taking full height of the viewport
+            backgroundColor: '#f9f9f9',  // Bright background
+            color: '#333',              // Dark text color for contrast
             fontFamily: 'Arial, sans-serif',
             textAlign: 'center',
             padding: '20px',
+            width:"100%"
         }}>
+            {/* Main Title */}
             <h1 style={{
-                fontSize: '2.5rem',
+                fontSize: '3rem',
                 marginBottom: '30px',
                 color: '#ff6347', // Bright color for heading
+                textAlign: 'center',
+                marginTop: 0,
             }}>
                 MATRIX_GUARD
             </h1>
+
+            {/* Text Area */}
             <textarea
                 style={{
                     width: '400px',
@@ -44,17 +57,23 @@ function Ajay() {
                     backgroundColor: '#ffffff', // White background for the text area
                     color: '#333', // Dark text color
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    marginTop: '20px',
                 }}
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Enter text to encrypt or decrypt..."
             ></textarea>
-            <div>
+
+            {/* Action Buttons */}
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center', // Align buttons in the center
+                gap: '20px', // Space between buttons
+            }}>
                 <button
                     onClick={encryptText}
                     style={{
                         padding: '12px 30px',
-                        marginRight: '20px',
                         backgroundColor: '#4CAF50', // Green for Encrypt
                         color: 'white',
                         border: 'none',
@@ -83,6 +102,8 @@ function Ajay() {
                 </button>
             </div>
         </div>
+
+        </>
     );
 }
 
